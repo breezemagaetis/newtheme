@@ -1,9 +1,16 @@
 
 <?php the_content(); ?>
+
+<?php if ($post->post_excerpt(); ?>{
+
 function wpdocs_custom_excerpt_length( $length ) {
 return 20;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 25 );
+<?php} else{
+ the_content();
+}?>
+
 
 <?php single_post_title(); ?>
 <?php
