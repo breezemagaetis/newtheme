@@ -1,12 +1,7 @@
-<?php   
-  add_filter("the_content", "plugin_myContentFilter");
-
-  function plugin_myContentFilter($content)
-  {
-    // Take the existing content and return a subset of it
-    return substr($content, 0, 300);
-  }
-?>
+<p>
+<?php echo_the_excerpt(); ?>
+<a href="<?php the_permalink(); ?> "> Read more&raquo;</a>
+</p>
 <?php single_post_title(); ?>
 <?php
  
